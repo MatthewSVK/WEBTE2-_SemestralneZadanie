@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect()->route('index', ['locale' => 'en']);
 });
+
+Route::get('/{locale}', function (string $locale) {
+    if(!in_array($locale, ['en', 'sk'])){
+        abort(400, "Wrong language");
+    }else{
+        App::setLocale($locale);
+        return view('index');
+    }
+    
+})->name('index');
