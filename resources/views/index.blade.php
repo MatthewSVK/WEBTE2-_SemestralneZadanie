@@ -18,8 +18,8 @@
     {{__('normal.langSelect')}}
     </a>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/en">EN</a></li>
-        <li><a class="dropdown-item" href="/sk">SK</a></li>
+        <li><a class="dropdown-item" href="./en">EN</a></li>
+        <li><a class="dropdown-item" href="./sk">SK</a></li>
     </ul>
 </li>
 @endsection
