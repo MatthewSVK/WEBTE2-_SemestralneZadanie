@@ -12,17 +12,6 @@
 </li>
 @endsection
 
-@section('langSelect')
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-    {{__('normal.langSelect')}}
-    </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="./en">EN</a></li>
-        <li><a class="dropdown-item" href="./sk">SK</a></li>
-    </ul>
-</li>
-@endsection
 
 @section('content')
 <p>hello</p>

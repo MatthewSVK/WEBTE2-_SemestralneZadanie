@@ -16,8 +16,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             @yield('menu')
-            @yield('langSelect')
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              {{__('normal.langSelect')}}
+              </a>
+              <ul class="dropdown-menu">
+                  <li><a id="en" class="dropdown-item" href="/language/en">EN</a></li>
+                  <li><a id="sk" class="dropdown-item" href="/language/sk">SK</a></li>
+              </ul>
+          </li>
         </ul>
+        <form class="d-flex">
+            @if (Route::has('login'))
+                @auth
+                    <button type="button" class="btn btn-outline-info" onclick="location.href='{{ url('/dashboard') }}';">Dashboard</button>
+                @else
+                    <button type="button" class="btn btn-outline-success" onclick="location.href='{{ route('login') }}';">Log in</button>
+                    @if (Route::has('register'))
+                    <button type="button" class="btn btn-outline-warning" onclick="location.href='{{ route('register') }}';">Register</button>
+                    @endif
+                @endauth
+            @endif
+        </form>
     </div>
   </div>
 </nav>

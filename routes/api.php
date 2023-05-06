@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\LangController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------

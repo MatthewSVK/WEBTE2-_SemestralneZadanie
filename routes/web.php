@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\App;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function(){
-    return redirect()->route('index', ['locale' => 'en']);
+    return view('index');
 });
 
-Route::get('/{locale}', function (string $locale) {
-    if(!in_array($locale, ['en', 'sk'])){
-        abort(400, "Wrong language");
-    }else{
-        App::setLocale($locale);
-        return view('index');
-    }
-    
-})->name('index');
+Route::get('language/{locale}', function(String $locale){
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+
+    return redirect()->back();
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
