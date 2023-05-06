@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    container_name: WEBTE
+    restart: on-failure
+    environment:
+      MYSQL_DATABASE: WEBTE_final
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: user123
+      MYSQL_ROOT_HOST: "%"
