@@ -1244,7 +1244,7 @@
                     ]
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Laravel\\Breeze\\": "src/"
@@ -8201,7 +8201,6 @@
         "fakerphp/faker",
         "filp/whoops",
         "hamcrest/hamcrest-php",
-        "laravel/breeze",
         "laravel/pint",
         "laravel/sail",
         "mockery/mockery",
