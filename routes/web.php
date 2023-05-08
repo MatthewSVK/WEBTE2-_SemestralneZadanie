@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,7 @@ use Illuminate\Support\Facades\App;
 */
 
 Route::get('/', function(){
+    ddd(Storage::disk('latex')->files());
     return view('index');
 });
 

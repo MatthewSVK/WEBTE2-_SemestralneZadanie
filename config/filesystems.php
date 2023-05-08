@@ -36,6 +36,12 @@ return [
             'throw' => false,
         ],
 
+        'latex' => [
+            'driver' => 'local',
+            'root' => storage_path().'/latex',
+            'throw' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
