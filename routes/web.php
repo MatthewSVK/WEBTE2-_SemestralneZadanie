@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LatexController;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', function(){
-    ddd(Storage::disk('latex')->files());
     return view('index');
 });
 
@@ -29,9 +29,7 @@ Route::get('language/{locale}', function(String $locale){
     return redirect()->back();
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [LatexController::class, 'parse'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

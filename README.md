@@ -15,3 +15,10 @@
 3. potom v priecinku semestralneho zadania -> **php artisan migrate**
 4. Ak nastane chyba treba ist do korenoveho priecinku kde je nainstalovane php8.2 -> a editnut php.ini file odkomentovat extension mysql -> ctrl+f mysql
 5. A hotovo!
+
+## Parsovanie Latex filov prilozenych
+1. obrazky boli premiestnene do public disku
+2. treba pustit u seba lokalne -> *php artisan storage:link*
+3. Do poznamky pri uploade novych latex suborov a obrazkov treba dat do poznamky ze v /includegraphics{FILENAME}, nedavat path ale iba filename
+4. demo struktury vyparsovanej sa da pozriet v latexControlleri -> odkomentovat ddd
+5. demo ako zobrazi controller na stranku je po prihlaseni na /dashboard
