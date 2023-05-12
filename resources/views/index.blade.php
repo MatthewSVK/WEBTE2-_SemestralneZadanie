@@ -14,5 +14,11 @@
 
 
 @section('content')
-<p>hello</p>
+    <h1 class="text-uppercase fs-1 fw-bold mt-5">Úvodná stránka</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At delectus eius reiciendis suscipit ut voluptas
+        voluptatibus? Autem blanditiis, error et natus neque nulla odio placeat quam voluptatem voluptatum. Dicta, sapiente.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias consectetur cum deleniti error eum facere in
+        ipsum libero maiores neque officia placeat, quia quis, ratione reiciendis reprehenderit tempora voluptas?
+    </p>
 @endsection
