@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"></script>
+    @yield('styles')
 </head>
 <body class="bg_image"
       style=" color: white; background: linear-gradient(90deg, rgba(18,9,121,1) 0%, rgba(196,22,22,1) 100%), rgb(18,9,121);">
@@ -86,5 +87,6 @@
         </div>
     </div>
 </footer>
+@yield('scripts')
 </body>
 </html>

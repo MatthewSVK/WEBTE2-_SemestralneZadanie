@@ -22,6 +22,10 @@ Route::get('/', function(){
     return view('index');
 });
 
+Route::get('/student', function(){
+    return view('student');
+});
+
 Route::get('language/{locale}', function(String $locale){
     app()->setLocale($locale);
     session()->put('locale', $locale);
