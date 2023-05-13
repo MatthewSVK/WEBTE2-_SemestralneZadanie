@@ -26,6 +26,22 @@ Route::get('/student', function(){
     return view('student');
 });
 
+Route::get('/teacher', function (){
+    $files = [
+        [
+            "name" => "file1",
+        ],
+        [
+            "name" => "file2",
+        ],
+        // Add more files as needed
+    ];
+//    $jsonString = '{"name": "uloha"}';
+//    $files = json_decode($jsonString, true);
+//    dd($files);
+    return view('teacher', compact('files'));
+});
+
 Route::get('language/{locale}', function(String $locale){
     app()->setLocale($locale);
     session()->put('locale', $locale);
