@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LatexController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
@@ -23,7 +24,7 @@ Route::get('/', function(){
 });
 
 Route::get('/student', function(){
-    return view('student');
+    return (new StudentController)->makeStudent();
 });
 
 Route::get('/teacher', function (){

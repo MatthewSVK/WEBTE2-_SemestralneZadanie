@@ -7,23 +7,14 @@
 @section('content')
     <h1 class="text-uppercase fs-1 fw-bold mt-5">Generate tasks:</h1>
 
-
-    <!-- kod pre controller , categories je sada prikladov-->
-
-{{--    public function index()--}}
-{{--    {--}}
-{{--    $categories = DB::table('categories')->get();--}}
-{{--    return view('students', compact( 'categories'));--}}
-{{--    }--}}
-
     <table class="table">
     <tbody>
     @foreach ($categories as $category)
         <tr>
             <td>
-                <form method="POST" action="{{ route('add_item') }}">
+                <form method="POST" action="">
                     @csrf
-                    <input type="hidden" name="item_id" value="{{ $category->id }}">
+                    <input type="hidden" name="item_id" value="{{ $category->ID }}">
                     <button type="submit" class="btn btn-primary" name="submit_button" value="set_{{ $loop->index }}">{{ $loop->index }}.set</button>
                 </form>
             </td>
@@ -53,10 +44,10 @@
         </thead>
         <tbody>
         @foreach ($items as $item)
-            <tr class="clickable-row" data-bs-toggle="modal" data-bs-target="#myModal" data-item-id="{{ $item->id }}" data-item-name="{{ $item->name }}" data-item-submitted="{{ $item->submitted }}">
-                <td>{{ $item->id }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->submitted }}</td>
+            <tr class="clickable-row" data-bs-toggle="modal" data-bs-target="#myModal" data-item-id="{{ $item->ID }}" data-item-name="{{ $item->task }}" data-item-submitted="{{ false }}">
+                <td>{{ $item->ID }}</td>
+                <td>{{ $item->task }}</td>
+                <td>{{ false }}</td>
             </tr>
         @endforeach
         </tbody>
@@ -99,7 +90,7 @@
                 // prisposobi sa podla stlpcov v tabulke
                 $('#item-id').text('ID: ' + itemId);
                 $('#item-name').text('Name: ' + itemName);
-                $('#item-submitted').text('Submitted: ' + itemSubmitted);
+                ('#item-submitted').text('Submitted: ' + itemSubmitted);
 
                 // Initialize the equation editor
                 var equationEditor = new EquationEditor($('#equation-editor')[0]);

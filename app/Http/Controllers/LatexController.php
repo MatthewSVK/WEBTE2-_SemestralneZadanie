@@ -17,7 +17,7 @@ class LatexController extends Controller
         ]);
     }
 
-    private function parseLatex(string $texContent){
+    public function parseLatex(string $texContent){
         $result = [];
         $lines = preg_split('/\R/', $texContent);
         
