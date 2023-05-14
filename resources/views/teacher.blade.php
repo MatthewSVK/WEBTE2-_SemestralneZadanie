@@ -54,41 +54,16 @@
                 </thead>
                 <tbody class="table-group-divider">
 
-                    <tr>
-                        <td class="text-white">Peter</td>
-                        <td class="text-white">Kopecký</td>
-                        <td class="text-white">111310</td>
-                        <td class="text-white">8</td>
-                        <td class="text-white">7</td>
-                        <td class="text-white">30</td>
-                    </tr>
-
-                    <tr>
-                        <td class="text-white">Matúš</td>
-                        <td class="text-white">Ďurovič</td>
-                        <td class="text-white">111111</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">22</td>
-                    </tr>
-
-                    <tr>
-                        <td class="text-white">Adrián</td>
-                        <td class="text-white">Soroka</td>
-                        <td class="text-white">111222</td>
-                        <td class="text-white">7</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">20</td>
-                    </tr>
-
-                    <tr>
-                        <td class="text-white">Kristína</td>
-                        <td class="text-white">Adamcová</td>
-                        <td class="text-white">123123</td>
-                        <td class="text-white">6</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">23</td>
-                    </tr>
+                    @foreach($students as $student)
+                        <tr>
+                            <td class="text-white">{{ $student->name }}</td>
+                            <td class="text-white">{{ $student->surname }}</td>
+                            <td class="text-white">{{ $student->id }}</td>
+                            <td class="text-white">{{ $student->num_tasks }}</td>
+                            <td class="text-white">{{ $student->num_handed }}</td>
+                            <td class="text-white">{{ $student->points_total }}</td>
+                        </tr>
+                    @endforeach
 
                 </tbody>
             </table>
