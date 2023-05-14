@@ -41,7 +41,7 @@
                         <td>
                             <input class="data_req" type="checkbox" id="chooseFile" name="chooseFile">
                         </td>
-                        <td>{{ $file['name'] }}</td>
+                        <td>{{ $file->name }}</td>
                         <td>
                             <input type="date" name="fromDate">
                         </td>
@@ -49,7 +49,6 @@
                             <input type="date" name="toDate">
                         </td>
                     </tr>
-
                 @endforeach
                 </tbody>
             </table>

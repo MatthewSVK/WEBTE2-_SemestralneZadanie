@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
+use App\Http\Controllers\LatexController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 

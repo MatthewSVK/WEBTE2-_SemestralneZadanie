@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LatexController;
-use App\Http\Controllers\StudentController;
-use Illuminate\Contracts\Cache\Store;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Student\StudentController;
+use App\Http\Controllers\Teacher\TeacherController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,19 +26,7 @@ Route::get('/student', function(){
 });
 
 Route::get('/teacher', function (){
-    $files = [
-        [
-            "name" => "file1",
-        ],
-        [
-            "name" => "file2",
-        ],
-        // Add more files as needed
-    ];
-//    $jsonString = '{"name": "uloha"}';
-//    $files = json_decode($jsonString, true);
-//    dd($files);
-    return view('teacher', compact('files'));
+    return (new TeacherController)->showTeacherLayout();
 });
 
 Route::get('language/{locale}', function(String $locale){
