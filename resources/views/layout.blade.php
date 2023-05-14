@@ -16,6 +16,7 @@
 </head>
 <body class="bg_image"
       style=" color: white; background: linear-gradient(90deg, rgba(18,9,121,1) 0%, rgba(196,22,22,1) 100%), rgb(18,9,121);">
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -64,6 +65,7 @@
     @yield('content')
 </div>
 
+@section('footer')
 <footer class="footer text-white fixed-bottom bg-dark">
     <div class="row">
         <div class="col" style="color: transparent">Content 1</div>
@@ -87,6 +89,7 @@
         </div>
     </div>
 </footer>
+@show
 @yield('scripts')
 </body>
 </html>
