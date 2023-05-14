@@ -12,6 +12,9 @@
 </li>
 @endsection
 
+@section('page-name')
+    {{__('normal.hello')}}
+@endsection
 
 @section('content')
     <h1 class="text-uppercase fs-1 fw-bold mt-5">Úvodná stránka</h1>

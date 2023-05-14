@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MathPac</title>
+    <link rel="icon" href="https://lh3.googleusercontent.com/AJxemLa9dl6kJBJX82BH9eSD704JBqOYG8UBVADCnYoQwozYnn1hR931XJoIOj-v3qY=h200">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,21 +24,9 @@
                  alt="mathpac_logo" width="30" height="30">
         </a>
         <div class="collapse navbar-collapse">
-            {{__('normal.hello')}}
+            @yield('page-name')
         </div>
         <div id="navbarSupportedContent">
-{{--            <ul class="navbar-nav me-auto mb-2 mb-lg-0">--}}
-{{--                            @yield('menu')--}}
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">--}}
-{{--                        {{__('normal.langSelect')}}--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu">--}}
-{{--                        <li><a id="en" class="dropdown-item" href="/language/en">EN</a></li>--}}
-{{--                        <li><a id="sk" class="dropdown-item" href="/language/sk">SK</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
             <form class="me-auto mr-0 mb-2 mb-lg-0">
                 @if (Route::has('login'))
                     @auth
@@ -60,7 +49,7 @@
     </div>
 </nav>
 
-<div class="container-md text-center p-0 mt-5">
+<div class="container-md text-center p-0 mt-5 mb-5">
     @yield('content')
 </div>
 
