@@ -10,8 +10,10 @@ class TeacherController extends Controller
     public function showTeacherLayout(){
         $fileCount= (new FileController())->loadFiles();
         $files= DB::table("latexFiles")->get();
+        $students= DB::table("users")->where("role", "student")->get();
         return view("teacher",[
-            "files"=> $files
+            "files"=> $files,
+            "students"=> $students
         ]);
     }
 }
