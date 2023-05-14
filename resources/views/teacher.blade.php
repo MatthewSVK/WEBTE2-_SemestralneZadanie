@@ -7,6 +7,13 @@
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
 
+    <style>
+        #numTasks:hover, #numHanded:hover, #pointsTotal:hover{
+            cursor: pointer;
+            background: rgba(25,135,84);
+            transition: background-color 0.7s;
+        }
+    </style>
 @endsection
 
 @section('page-name')
@@ -19,29 +26,30 @@
         <h1 class="text-center text-uppercase fs-1 fw-bold">{{__('normal.teacher-page-title')}}</h1>
     </header>
     <main>
-        <hr class=" mt-3 mb-3 hr hr-blurry" />
+        <hr class=" mt-3 mb-3 hr hr-blurry"/>
 
         <div class="border-1 text-white border-dark py-4 mx-auto mb-3 card  text-center"
              style="padding: 0 2% 0 2%; max-width: 75%; background: rgba(16,16,16,0.7);">
 
             <p>{{__('normal.teacher-page-desc-1')}}</p>
 
-            <hr class=" mt-3 mb-3 hr hr-blurry" />
+            <hr class=" mt-3 mb-3 hr hr-blurry"/>
 
             @include('components/form')
 
         </div>
 
-        <hr class=" mt-3 mb-3 hr hr-blurry" />
+        <hr class=" mt-3 mb-3 hr hr-blurry"/>
 
         <div class="border-1 text-white border-dark py-4 mx-auto mb-3 card  text-center"
              style="padding: 0 2% 0 2%; max-width: 90%; background: rgba(16,16,16,0.7);">
 
             <p>{{__('normal.teacher-page-desc-2')}}</p>
 
-            <hr class=" mt-3 mb-3 hr hr-blurry" />
+            <hr class=" mt-3 mb-3 hr hr-blurry"/>
 
-            <table class="table table-striped table-bordered table-sm border-1 bg-dark text-white border-dark" id="tableStudents">
+            <table class="table table-striped table-bordered table-sm border-1 bg-dark text-white border-dark"
+                   id="tableStudents">
                 <thead class="text-center">
                 <tr>
                     <th class="th-sm" id="studentName">Meno</th>
@@ -54,41 +62,16 @@
                 </thead>
                 <tbody class="table-group-divider">
 
+                @foreach($students as $student)
                     <tr>
-                        <td class="text-white">Peter</td>
-                        <td class="text-white">Kopecký</td>
-                        <td class="text-white">111310</td>
-                        <td class="text-white">8</td>
-                        <td class="text-white">7</td>
-                        <td class="text-white">30</td>
+                        <td class="text-white">{{ $student->name }}</td>
+                        <td class="text-white">{{ $student->surname }}</td>
+                        <td class="text-white">{{ $student->id }}</td>
+                        <td class="text-white" id="numTasks" data-bs-toggle="modal" data-bs-target="#descModal" data-content="Zoznam vygenerovaných úloh">{{ $student->num_tasks }}</td>
+                        <td class="text-white" id="numHanded" data-bs-toggle="modal" data-bs-target="#descModal" data-content="Zoznam odovzdaných úloh">{{ $student->num_handed }}</td>
+                        <td class="text-white" id="pointsTotal" data-bs-toggle="modal" data-bs-target="#descModal" data-content="Výsledok správnosti">{{ $student->points_total }}</td>
                     </tr>
-
-                    <tr>
-                        <td class="text-white">Matúš</td>
-                        <td class="text-white">Ďurovič</td>
-                        <td class="text-white">111111</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">22</td>
-                    </tr>
-
-                    <tr>
-                        <td class="text-white">Adrián</td>
-                        <td class="text-white">Soroka</td>
-                        <td class="text-white">111222</td>
-                        <td class="text-white">7</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">20</td>
-                    </tr>
-
-                    <tr>
-                        <td class="text-white">Kristína</td>
-                        <td class="text-white">Adamcová</td>
-                        <td class="text-white">123123</td>
-                        <td class="text-white">6</td>
-                        <td class="text-white">5</td>
-                        <td class="text-white">23</td>
-                    </tr>
+                @endforeach
 
                 </tbody>
             </table>
@@ -99,6 +82,34 @@
 
     </main>
 
+    <div class="modal fade bd-example-modal-lg" id="descModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" style="color: black">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header justify-content-around">
+                    <div class="row w-100">
+                        <div class="col"></div>
+                        <div class="col-8">
+                            <h5 class="modal-title fs-5" style="text-align: center; margin: 0 auto;" id="exampleModalLabel">Info</h5>
+                        </div>
+                        <div class="col text-end">
+                            <button type="button" class="btn-close" style="margin: 0;" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>tu bude zoznam uloh ktore student vypracoval</p>
+                    <p>tu bude zoznam uloh ktore student odovzdal</p>
+                    <p>tu bude vysledok spravnosti odovzdanych uloh</p>
+                </div>
+{{--                <div class="modal-footer">--}}
+{{--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
+{{--                    <button type="button" class="btn btn-primary">Submit</button>--}}
+{{--                </div>--}}
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('scripts')
@@ -108,10 +119,10 @@
             "aoColumns": [
                 null,
                 null,
-                { "orderData": [2, 1] },
-                { "orderData": [3, 1] },
-                { "orderData": [4, 1] },
-                { "orderData": [5, 1] }
+                {"orderData": [2, 1]},
+                {"orderData": [3, 1]},
+                {"orderData": [4, 1]},
+                {"orderData": [5, 1]}
             ],
             "paging": false,
             "info": false,
@@ -125,6 +136,23 @@
         //
         //     });
         // });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#numTasks').click(function() {
+                let content = $(this).data('content');
+                $('#descModal .modal-title').text(content);
+            });
+            $('#numHanded').click(function() {
+                let content = $(this).data('content');
+                $('#descModal .modal-title').text(content);
+            });
+            $('#pointsTotal').click(function() {
+                let content = $(this).data('content');
+                $('#descModal .modal-title').text(content);
+            });
+        });
     </script>
 
 @endsection
