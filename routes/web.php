@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\LatexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Student\StudentController;
@@ -28,6 +29,9 @@ Route::get('/student', function(){
 Route::get('/teacher', function (){
     return (new TeacherController)->showTeacherLayout();
 });
+
+Route::post('/submit-form', [FormController::class, 'submit'])->name('submit-form');
+
 
 Route::get('language/{locale}', function(String $locale){
     app()->setLocale($locale);

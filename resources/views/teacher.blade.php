@@ -26,32 +26,7 @@
 
             <hr class=" mt-3 mb-3 hr hr-blurry" />
 
-            <table class="table table-dark text-white" id="tableFiles">
-                <thead>
-                <tr>
-                    <td></td>
-                    <td>File</td>
-                    <td>From</td>
-                    <td>To</td>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($files as $file)
-                    <tr>
-                        <td>
-                            <input class="data_req" type="checkbox" id="chooseFile" name="chooseFile">
-                        </td>
-                        <td>{{ $file->name }}</td>
-                        <td>
-                            <input type="date" name="fromDate">
-                        </td>
-                        <td>
-                            <input type="date" name="toDate">
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+            @include('components/form')
 
         </div>
 
