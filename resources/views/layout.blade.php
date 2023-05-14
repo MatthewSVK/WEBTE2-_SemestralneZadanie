@@ -55,7 +55,7 @@
 
 <footer class="footer text-white fixed-bottom bg-dark">
     <div class="row">
-        <div class="col" style="color: transparent">Content 1</div>
+        <div class="col" style="color: transparent"></div>
         <div class="col">
             <div class="text-center p-2 bg-dark">
                 © 2023 Copyright:
