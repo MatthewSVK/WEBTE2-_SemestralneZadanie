@@ -2,6 +2,27 @@
 
 All notable changes of the PHPUnit 10.1 release series are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [10.1.3] - 2023-05-11
+
+### Changed
+
+* [#5343](https://github.com/sebastianbergmann/phpunit/pull/5343): Provide distinct messages when a test is considered risky due to output buffering level mismatch
+
+### Fixed
+
+* [#5345](https://github.com/sebastianbergmann/phpunit/issues/5345): No stack trace shown for previous exceptions during bootstrap
+
+## [10.1.2] - 2023-04-22
+
+### Added
+
+* `PHPUnit\Runner\Extension\Facade::replaceOutput()` and `PHPUnit\Runner\Extension\Facade::replacesOutput()`
+* `PHPUnit\Event\Telemetry\Info::garbageCollectorStatus()`
+
+### Fixed
+
+* [#5340](https://github.com/sebastianbergmann/phpunit/issues/5340): Not all test-related events are emitted when a test fails or errors
+
 ## [10.1.1] - 2023-04-17
 
 ### Fixed
@@ -51,5 +72,7 @@ All notable changes of the PHPUnit 10.1 release series are documented in this fi
 * `PHPUnit\TextUI\Configuration\Configuration::coverageExcludeDirectories()` (use `source()->excludeDirectories()` instead)
 * `PHPUnit\TextUI\Configuration\Configuration::coverageExcludeFiles()` (use `source()->excludeFiles()` instead)
 
+[10.1.3]: https://github.com/sebastianbergmann/phpunit/compare/10.1.2...10.1.3
+[10.1.2]: https://github.com/sebastianbergmann/phpunit/compare/10.1.1...10.1.2
 [10.1.1]: https://github.com/sebastianbergmann/phpunit/compare/10.1.0...10.1.1
 [10.1.0]: https://github.com/sebastianbergmann/phpunit/compare/10.0.19...10.1.0
