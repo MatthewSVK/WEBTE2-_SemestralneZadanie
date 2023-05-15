@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LatexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Student\StudentController;
@@ -25,6 +26,11 @@ Route::get('/', function(){
 Route::get('/student', function(){
     return (new StudentController)->makeStudent();
 });
+
+Route::get('/items/{id}', function($id){
+    return (new ItemController)->show($id);
+});
+
 
 Route::get('/teacher', function (){
     return (new TeacherController)->showTeacherLayout();
