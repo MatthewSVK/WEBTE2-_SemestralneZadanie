@@ -7,7 +7,7 @@ return [
     'home-page-desc2' => "Každý prihlásený",
     'home-page-desc3' => "študent",
     'home-page-desc4' => "si môže náhodne vygenerovať matematické príklady, ktoré môže,
-        ale nemusí následne vypočítať a odovzdať. Odovydané príklady budú automaticky vyhodnotené, takže bude študentovi
+        ale nemusí následne vypočítať a odovzdať. Odovzdané príklady budú automaticky vyhodnotené, takže bude študentovi
         sprístupnený výsledok. Každý súbor predstavuje sadu ľubovolného počtu príkladov, z ktorého môže študent
         vygenerovať vždy jeden príklad na riešenie.",
     'home-page-desc5' => "učiteľ",
