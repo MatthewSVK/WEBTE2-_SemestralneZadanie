@@ -3,15 +3,32 @@
 @section('styles')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
-    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.bootstrap5.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+
 
     <style>
         #numTasks:hover, #numHanded:hover, #pointsTotal:hover{
             cursor: pointer;
             background: rgba(25,135,84);
             transition: background-color 0.7s;
+        }
+        .dataTables_wrapper .dt-buttons {
+            float:none;
+            text-align:center;
         }
     </style>
 @endsection
@@ -75,9 +92,9 @@
 
                 </tbody>
             </table>
-            <div>
-                <button type="submit" name="export-csv" id="export-csv" class="btn btn-success mt-2">Export CSV</button>
-            </div>
+{{--            <div>--}}
+{{--                <button type="submit" name="export-csv" id="export-csv" class="btn btn-success mt-2">Export CSV</button>--}}
+{{--            </div>--}}
         </div>
 
     </main>
@@ -115,31 +132,38 @@
 @section('scripts')
 
     <script>
-        $('#tableStudents').DataTable({
-            "aoColumns": [
-                null,
-                null,
-                {"orderData": [2, 1]},
-                {"orderData": [3, 1]},
-                {"orderData": [4, 1]},
-                {"orderData": [5, 1]}
-            ],
-            "paging": false,
-            "info": false,
-            "searching": false
-        });
-
-        // {"bSortable": false}
-
-        // $(document).ready(function (){
-        //     $('chooseFile').addEventListener('click', function (){
-        //
-        //     });
-        // });
-    </script>
-
-    <script>
         $(document).ready(function() {
+
+            let table = $('#tableStudents').DataTable({
+                "aoColumns": [
+                    null,
+                    null,
+                    {"orderData": [2, 1]},
+                    {"orderData": [3, 1]},
+                    {"orderData": [4, 1]},
+                    {"orderData": [5, 1]}
+                ],
+                "paging": false,
+                "info": false,
+                "searching": false,
+                dom: 'frtipB',
+                buttons: [
+                    {
+                        filename: 'students_list',
+                        extend: 'csvHtml5',
+                        titleAttr: 'CSV',
+                        text: 'Export CSV',
+                        className: 'btn btn-success mt-2',
+                        charset: 'utf-8',
+                        extension: '.csv',
+                        bom: true,
+
+                    },
+                ]
+            });
+            // table.buttons().container()
+            //     .appendTo( '#export-csv .col-md-6:eq(0)' );
+
             $('#numTasks').click(function() {
                 let content = $(this).data('content');
                 $('#descModal .modal-title').text(content);
