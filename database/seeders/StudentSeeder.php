@@ -15,7 +15,8 @@ class StudentSeeder extends Seeder
     {
         DB::table('users')->insert([
             'id' => 111310,
-            'name' => "Peter Kopecký",
+            'name' => "Peter",
+            'surname' => 'Kopecký',
             'role' => "student",
             'email'=> "pista@pista.sk",
             'password' => "heslo",
