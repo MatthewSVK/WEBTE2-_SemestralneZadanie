@@ -69,8 +69,7 @@
                    id="tableStudents">
                 <thead class="text-center">
                 <tr>
-                    <th class="th-sm" id="studentName">Meno</th>
-                    <th class="th-sm" id="studentSurname">Priezvisko</th>
+                    <th class="th-sm" id="studentName">Meno a Priezvisko</th>
                     <th class="th-sm" id="studentId">ID študenta</th>
                     <th class="th-sm" id="numGenTasks">Počet gen. úloh</th>
                     <th class="th-sm" id="numSubmitTasks">Počet odovz. úloh</th>
@@ -82,7 +81,6 @@
                 @foreach($students as $student)
                     <tr>
                         <td class="text-white">{{ $student->name }}</td>
-                        <td class="text-white">{{ $student->surname }}</td>
                         <td class="text-white">{{ $student->id }}</td>
                         <td class="text-white" id="numTasks" data-bs-toggle="modal" data-bs-target="#descModal" data-content="Zoznam vygenerovaných úloh">{{ $student->num_tasks }}</td>
                         <td class="text-white" id="numHanded" data-bs-toggle="modal" data-bs-target="#descModal" data-content="Zoznam odovzdaných úloh">{{ $student->num_handed }}</td>
