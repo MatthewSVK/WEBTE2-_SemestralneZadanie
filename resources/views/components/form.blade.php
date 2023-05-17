@@ -8,7 +8,7 @@
         @csrf
         <div class="form-row d-flex">
             <div class="col">
-                <input type="checkbox" class="align-items-center justify-content-center h-100" id="checkbox" name="{{$file->name}}checkbox" value="1" {{ $file->active ? 'checked' : '' }}>
+                <input type="checkbox" class="align-items-center justify-content-center h-100" id="checkbox" name="{{ $file->name }}checkbox" value="1" {{ $file->active ? 'checked' : '' }}>
             </div>
             <div class="col">
                 <input type="text" id="name" name="name" value="{{ $file->name }}" class="form-control">
