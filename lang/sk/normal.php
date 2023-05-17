@@ -7,7 +7,7 @@ return [
     'home-page-desc2' => "Každý prihlásený",
     'home-page-desc3' => "študent",
     'home-page-desc4' => "si môže náhodne vygenerovať matematické príklady, ktoré môže,
-        ale nemusí následne vypočítať a odovzdať. Odovydané príklady budú automaticky vyhodnotené, takže bude študentovi
+        ale nemusí následne vypočítať a odovzdať. Odovzdané príklady budú automaticky vyhodnotené, takže bude študentovi
         sprístupnený výsledok. Každý súbor predstavuje sadu ľubovolného počtu príkladov, z ktorého môže študent
         vygenerovať vždy jeden príklad na riešenie.",
     'home-page-desc5' => "učiteľ",
@@ -15,7 +15,7 @@ return [
         sprístupnené na riešenie. Taktiež môže definovať počet bodov za príklady v danom súbore. Učiteľovi bude
         sprístupnená tabuľka všetkých prihlásených študentov, ktorú si následne bude môcť exportovať do súboru CSV.
         V tabuľke bude prehľad vygenerovaných úloh, odovzdaných úloh, počet celkových bodov, ktoré študent získal a
-        súmar správnosti jeho odpovedí.",
+        sumár správnosti jeho odpovedí.",
     'home-page-desc7' => "Nižšie nájdete video, ktoré dokumentuje celú funkcionalitu tejto aplikácie.",
     'home-page-title2' => "Video ukážka",
     'teacher-page' => "MathPac - učíteľský portál",
