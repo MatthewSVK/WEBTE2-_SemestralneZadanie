@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExportPDFController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LatexController;
@@ -22,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('index');
 });
+
+Route::post('/post-instruction', [ExportPDFController::class, 'postInstruction']);
+
+Route::get('/download-pdf', [ExportPDFController::class, 'exportPDF']);
 
 Route::get('/student', function(){
     return (new StudentController)->makeStudent();
