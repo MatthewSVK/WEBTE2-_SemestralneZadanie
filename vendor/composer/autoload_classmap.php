@@ -2700,6 +2700,7 @@ return array(
     'League\\Flysystem\\InvalidVisibilityProvided' => $vendorDir . '/league/flysystem/src/InvalidVisibilityProvided.php',
     'League\\Flysystem\\Local\\FallbackMimeTypeDetector' => $vendorDir . '/league/flysystem-local/FallbackMimeTypeDetector.php',
     'League\\Flysystem\\Local\\LocalFilesystemAdapter' => $vendorDir . '/league/flysystem-local/LocalFilesystemAdapter.php',
+    'League\\Flysystem\\Local\\LocalFilesystemAdapterTest' => $vendorDir . '/league/flysystem-local/LocalFilesystemAdapterTest.php',
     'League\\Flysystem\\MountManager' => $vendorDir . '/league/flysystem/src/MountManager.php',
     'League\\Flysystem\\PathNormalizer' => $vendorDir . '/league/flysystem/src/PathNormalizer.php',
     'League\\Flysystem\\PathPrefixer' => $vendorDir . '/league/flysystem/src/PathPrefixer.php',
