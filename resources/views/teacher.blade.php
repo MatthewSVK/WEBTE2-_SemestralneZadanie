@@ -45,7 +45,7 @@
     <main>
         <hr class=" mt-3 mb-3 hr hr-blurry"/>
 
-        <div class="border-1 text-white border-dark py-4 mx-auto mb-3 card  text-center"
+        <div class="border-1 text-white border-dark py-4 mx-auto w-50 mb-3 card  text-center"
              style="padding: 0 2% 0 2%; max-width: 75%; background: rgba(16,16,16,0.7);">
 
             <p>{{__('normal.teacher-page-desc-1')}}</p>
