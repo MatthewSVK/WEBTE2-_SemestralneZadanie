@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\DB;
 class TeacherController extends Controller
 {
     public function showTeacherLayout(){
-        $fileCount= (new FileController())->loadFiles();
+        $empty= DB::table("latexFiles")->get();
+        if($empty->isEmpty()) $fileCount= (new FileController())->loadFiles();
+
         $files= DB::table("latexFiles")->get();
         $students= DB::table("users")->where("role", "student")->get();
         return view("teacher",[

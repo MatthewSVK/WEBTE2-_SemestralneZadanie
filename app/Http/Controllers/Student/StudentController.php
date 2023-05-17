@@ -12,15 +12,13 @@ class StudentController extends Controller{
     public function makeStudent(){
         DB::table("exercises")->truncate();
 
-        $files= DB::table("latexFiles")->where("active", 1)->get();
+        $files= DB::table("latexFiles")->where("active", true)->get();
 
-        foreach ($files as $results){
-            foreach ($results as $result){
-                $results= (new LatexController)->parseLatex(Storage::disk('latex')->get($result->name));
-                DB::table("exercises")->insert($results);
+        foreach ($files as $results => $result){
+            if (($result->from < now() && $result->to >now()) || ($result->from ==null || $result->to==null)){
+                    $results= (new LatexController)->parseLatex(Storage::disk('latex')->get($result->name));
+                    DB::table("exercises")->insert($results);
             }
-
-
         }
 
         $categories= DB::table("exercises")->get();
