@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class FormController extends Controller
 {
@@ -19,11 +20,18 @@ class FormController extends Controller
         foreach ($formData as $key => $value) {
             if (strpos($key, 'checkbox') !== false) {
                 $field = str_replace('_texcheckbox', '.tex', $key);
-                $toPush= ["name" => $field, "value" => $value];
+                $toPush = ["name" => $field, "value" => $value];
                 $checkboxFields[$field] = $toPush;
                 unset($formData[$key]);
             }
         }
+
+        DB::table("latexFiles")->update([
+            "active" => false,
+            "from" => null,
+            "to" => null
+        ]);
+
 
 // Do something with the form data
         $name = $formData['name'];
@@ -33,21 +41,15 @@ class FormController extends Controller
         // Process checkbox fields
         foreach ($checkboxFields as $field => $checkbox) {
             $isChecked = $checkbox['value'] == '1';
-            //ddd($checkbox['name']);
             if ($isChecked) {
                 DB::table("latexFiles")->where("name", $checkbox['name'])->update([
                     "active" => true,
                     "from" => $startDate,
                     "to" => $endDate
                 ]);
-            } else {
-                DB::table("latexFiles")->where("name", $checkbox['name'])->update([
-                    "active" => false,
-                    "from" => null,
-                    "to" => null
-                ]);
             }
         }
+
 
         // Return a response or redirect as needed
         return redirect()->back();
