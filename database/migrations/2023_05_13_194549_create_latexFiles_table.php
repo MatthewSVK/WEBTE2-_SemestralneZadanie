@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean("active")->default(false);
             $table->timestamp("from")->nullable();
             $table->timestamp("to")->nullable();
+            $table->integer("points")->default(100)->nullable();
             $table->timestamps();
         });
     }
