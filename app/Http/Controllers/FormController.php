@@ -32,14 +32,10 @@ class FormController extends Controller
             "to" => null
         ]);
 
-
-// Do something with the form data
-        $name = $formData['name'];
         $startDate = $formData['start_date'];
         $endDate = $formData['end_date'];
         $points = $formData['pointPerFile'];
 
-        // Process checkbox fields
         foreach ($checkboxFields as $field => $checkbox) {
             $isChecked = $checkbox['value'] == '1';
             if ($isChecked) {
@@ -53,7 +49,7 @@ class FormController extends Controller
         }
 
 
-        // Return a response or redirect as needed
+
         return redirect()->back();
     }
 
