@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="https://lh3.googleusercontent.com/AJxemLa9dl6kJBJX82BH9eSD704JBqOYG8UBVADCnYoQwozYnn1hR931XJoIOj-v3qY=h200"
                  alt="mathpac_logo" width="30" height="30">
         </a>
@@ -31,8 +31,17 @@
             <form class="me-auto mr-0 mb-2 mb-lg-0">
                 @if (Route::has('login'))
                     @auth
+                        @if(Auth::user()->role == 'student')
                         <button type="button" class="btn btn-outline-info"
-                                onclick="location.href='{{ url('/dashboard') }}';">{{__('normal.nav-btn1')}}
+                                onclick="location.href='{{ url('/student') }}';">{{__('normal.nav-btn1')}}
+                        </button>
+                        @else
+                        <button type="button" class="btn btn-outline-info"
+                                onclick="location.href='{{ url('/teacher') }}';">{{__('normal.nav-btn1')}}
+                        </button>
+                        @endif
+                        <button type="button" class="btn btn-outline-warning"
+                                onclick="location.href='{{ url('/profile') }}';">Profile
                         </button>
                     @else
                         <button type="button" class="btn btn-outline-success mr-2"
