@@ -6,7 +6,7 @@
     {{--    </x-slot>--}}
 
     <header class="mt-5 mb-5">
-        <h1 class="text-center" style="font-size: xxx-large; font-weight: bolder; margin-top: 5px; margin-bottom: 5px">PROFILE</h1>
+        <h1 class="text-center" style="font-size: xxx-large; font-weight: bolder; margin-top: 5px; margin-bottom: 5px">{{__('normal.profile-title')}}</h1>
     </header>
 
     <div class="py-12">

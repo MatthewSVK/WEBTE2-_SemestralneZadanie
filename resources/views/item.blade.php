@@ -8,7 +8,7 @@
 <!-- https://cortexjs.io/mathlive/ link na stranku editora -->
 @section('content')
 
-    <h1 class="text-uppercase fs-1 fw-bold mt-5">Assigned task:</h1>
+    <h1 class="text-uppercase fs-1 fw-bold mt-5">{{__('normal.student-page-title3')}}</h1>
 
     <div id="task">
         <div class="container-fluid">
@@ -24,10 +24,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <a href="{{ URL::previous() }}" class="btn btn-secondary">Back</a>
+                <a href="{{ URL::previous() }}" class="btn btn-secondary">{{__('normal.task-btn1')}}</a>
             </div>
             <div class="col-md-6">
-                <button type="button" class="btn btn-secondary">Submit</button>
+                <button type="button" class="btn btn-secondary">{{__('normal.task-btn2')}}</button>
             </div>
         </div>
     </div>
