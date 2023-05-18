@@ -37,6 +37,7 @@ class FormController extends Controller
         $name = $formData['name'];
         $startDate = $formData['start_date'];
         $endDate = $formData['end_date'];
+        $points = $formData['pointPerFile'];
 
         // Process checkbox fields
         foreach ($checkboxFields as $field => $checkbox) {
@@ -45,7 +46,8 @@ class FormController extends Controller
                 DB::table("latexFiles")->where("name", $checkbox['name'])->update([
                     "active" => true,
                     "from" => $startDate,
-                    "to" => $endDate
+                    "to" => $endDate,
+                    "points" => $points
                 ]);
             }
         }

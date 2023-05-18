@@ -13,7 +13,7 @@
             <td>
                 <form method="POST" action="">
                     @csrf
-                    <input type="hidden" name="item_id" value="{{ $category->ID }}">
+                    <input type="hidden" name="item_id" value="{{ $category->task_id }}">
                     <button type="submit" style="background-color: black ; color: white" class="btn" name="submit_button" value="set_{{ $loop->index }}">{{ $loop->index }}.set</button>
                 </form>
             </td>
@@ -35,8 +35,8 @@
             </thead>
             <tbody>
             @foreach ($items as $item)
-                <tr class="clickable-row" onclick="window.location.href='{{ url('/items/' . $item->ID) }}'">
-                    <td>{{ $item->ID }}</td>
+                <tr class="clickable-row" onclick="window.location.href='{{ url('/items/' . $item->id) }}'">
+                    <td>{{ $item->id }}</td>
                     <td>\[{{$item->task}}\]</td>
                     <td>{{ false }}</td>
                 </tr>
