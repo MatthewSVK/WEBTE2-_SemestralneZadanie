@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Storage;
 class StudentController extends Controller{
 
     public function makeStudent(){
+        if(Auth::user()->role != 'student'){
+            return redirect()->route('home');
+        }
 
         $files= DB::table("latexFiles")->where("active", true)->get();
         $i=0;

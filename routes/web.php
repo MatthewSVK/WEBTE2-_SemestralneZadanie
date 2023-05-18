@@ -30,7 +30,7 @@ Route::get('/download-pdf', [ExportPDFController::class, 'exportPDF']);
 
 Route::get('/student', function(){
     return (new StudentController)->makeStudent();
-});
+})->middleware(['auth', 'verified']);
 
 Route::get('/items/{id}', function($id){
     return (new ItemController)->show($id);
@@ -39,7 +39,7 @@ Route::get('/items/{id}', function($id){
 
 Route::get('/teacher', function (){
     return (new TeacherController)->showTeacherLayout();
-});
+})->middleware(['auth', 'verified']);
 
 Route::post('/submit-form', [FormController::class, 'submit'])->name('submit-form');
 

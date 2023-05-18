@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 class TeacherController extends Controller
 {
     public function showTeacherLayout(){
+        if(Auth::user()->role != 'teacher'){
+            return redirect()->route('home');
+        }
+
         $empty= DB::table("latexFiles")->get();
         if($empty->isEmpty()) $fileCount= (new FileController())->loadFiles();
 
