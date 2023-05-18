@@ -19,7 +19,7 @@
             <p class="my-paragraph">\[{{$item->task}}\]</p>
         </div>
     </div>
-    <math-field>f(x) = \sin(x+\pi)</math-field>
+    <math-field id="MathField">f(x) = \sin(x+\pi)</math-field>
     <div id="keyboard"></div>
     <div class="container">
         <div class="row">
@@ -27,7 +27,10 @@
                 <a href="{{ URL::previous() }}" class="btn btn-secondary">{{__('normal.task-btn1')}}</a>
             </div>
             <div class="col-md-6">
-                <button type="button" class="btn btn-secondary">{{__('normal.task-btn2')}}</button>
+                <form id="submitTask" type="POST" action="/items">
+                    @csrf
+                    <button type="submit" class="btn btn-secondary">{{__('normal.task-btn2')}}</button>
+                </form>
             </div>
         </div>
     </div>
@@ -42,5 +45,23 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script defer src="//unpkg.com/mathlive"></script>
-
+    <script>
+        $("#submitTask").submit(function(e){
+            e.preventDefault();
+            $.ajax({
+            url: "/items",
+            type : "POST",
+            data : {taskId : "{{$id}}",
+                    userId : "{{Auth::user()->id}}",
+                    submitedResult : $("#MathField").val()},
+            success: function(result){
+                alert("OK");
+            },
+            error: function(result){
+                alert('error');
+            }
+            });
+        });
+        
+    </script>
 @endsection

@@ -57,6 +57,29 @@
         </div>
 
         <hr class=" mt-3 mb-3 hr hr-blurry"/>
+        
+        <div class="container" style="padding: 10px;">
+            <form id="uploadTask" method="post" action="{{ route('images.store') }}" 
+                    enctype="multipart/form-data">
+                @csrf
+                <label><h4>Add New Task</h4></label>
+                <div class="row">
+                    <div class="image col-sm">
+                        <label><h4>Select Image(Optional)</h4></label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="col-sm">
+                        <label><h4>Select Latex File(Optional)</h4></label>
+                        <input type="file" class="form-control" name="latex">
+                    </div>
+                </div>
+                <div class="post_button">
+                <button type="submit" class="btn btn-success">Add</button>
+                </div>
+            </form>
+        </div>
+
+        <hr class=" mt-3 mb-3 hr hr-blurry"/>
 
         <div class="border-1 text-white border-dark py-4 mx-auto mb-3 card  text-center"
              style="padding: 0 2% 0 2%; max-width: 90%; background: rgba(16,16,16,0.7);">
@@ -96,7 +119,6 @@
 {{--                <button type="submit" name="export-csv" id="export-csv" class="btn btn-success mt-2">Export CSV</button>--}}
 {{--            </div>--}}
         </div>
-
     </main>
 
     <div class="modal fade bd-example-modal-lg" id="descModal" tabindex="-1" aria-labelledby="exampleModalLabel"

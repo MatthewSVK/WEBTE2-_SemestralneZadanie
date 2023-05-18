@@ -4,6 +4,7 @@ use App\Http\Controllers\ExportPDFController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LatexController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Teacher\TeacherController;
@@ -28,32 +29,31 @@ Route::post('/post-instruction', [ExportPDFController::class, 'postInstruction']
 
 Route::get('/download-pdf', [ExportPDFController::class, 'exportPDF']);
 
-Route::get('/student', function(){
-    return (new StudentController)->makeStudent();
-})->middleware(['auth', 'verified']);
-
 Route::get('/items/{id}', function($id){
     return (new ItemController)->show($id);
-});
-
-Route::get('image/{filename}', [ItemController::class, 'displayImage'])->name('image.displayImage');
-
-
-Route::get('/teacher', function (){
-    return (new TeacherController)->showTeacherLayout();
 })->middleware(['auth', 'verified']);
 
-Route::post('/submit-form', [FormController::class, 'submit'])->name('submit-form');
+Route::post('/items', [ItemController::class, 'submit'])->middleware(['auth', 'verified']);
 
+Route::get('/student', [StudentController::class, 'makeStudent'])->middleware(['auth', 'verified']);
+
+Route::get('/teacher', [TeacherController::class, 'showTeacherLayout'])->middleware(['auth', 'verified']);
+
+Route::post('/submit-form', [FormController::class, 'submit'])->name('submit-form');
 
 Route::get('language/{locale}', function(String $locale){
     app()->setLocale($locale);
     session()->put('locale', $locale);
-
     return redirect()->back();
 });
 
-Route::get('/dashboard', [LatexController::class, 'parse'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('image/{filename}', [ItemController::class, 'displayImage'])->name('image.displayImage');
+
+//For adding an image
+Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
+
+//For storing an image
+Route::post('/store-image',[ImageUploadController::class,'storeImage'])->name('images.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

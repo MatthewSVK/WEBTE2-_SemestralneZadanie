@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('role');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer("num_tasks")->nullable();
-            $table->integer("num_handed")->nullable();
-            $table->integer("points_total")->nullable();
+            $table->integer("num_tasks")->default(0);
+            $table->integer("num_handed")->default(0);
+            $table->integer("points_total")->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
