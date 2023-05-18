@@ -15,7 +15,7 @@ style="background: rgba(33,37,41,1)">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                        {{ __('Home') }}
+                        {{ __('normal.home') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -28,7 +28,7 @@ style="background: rgba(33,37,41,1)">
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('normal.logout') }}
                         </x-dropdown-link>
                     </form>
                 </button>

@@ -41,7 +41,7 @@
                         </button>
                         @endif
                         <button type="button" class="btn btn-outline-warning"
-                                onclick="location.href='{{ url('/profile') }}';">Profile
+                                onclick="location.href='{{ url('/profile') }}';">{{__('normal.prof')}}
                         </button>
                     @else
                         <button type="button" class="btn btn-outline-success mr-2"
