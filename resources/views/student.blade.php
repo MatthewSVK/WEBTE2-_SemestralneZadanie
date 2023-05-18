@@ -3,8 +3,12 @@
 @section('styles')
 @endsection
 
+@section('page-name')
+    {{__('normal.student-page')}}
+@endsection
+
 @section('content')
-    <h1 class="text-uppercase fs-1 fw-bold mt-5">Generate tasks:</h1>
+    <h1 class="text-center text-uppercase fs-1 fw-bold mt-5">{{__('normal.student-page-title')}}</h1>
 
     <table class="table">
     <tbody>
@@ -22,15 +26,18 @@
     </tbody>
     </table>
 
-    <h1 class="text-uppercase fs-1 fw-bold mt-5">Assigned tasks:</h1>
-    <h5>(to show click on the task)</h5>
+    <hr class=" mt-3 mb-3 hr hr-blurry"/>
+
+
+    <h1 class="text-center text-uppercase fs-1 fw-bold mt-5">{{__('normal.student-page-title2')}}</h1>
+    <h5>{{__('normal.student-page-subtitle2')}}</h5>
     <div class="table-responsive">
         <table class="table" style="color: white">
             <thead>
             <tr>
                 <th>#</th>
-                <th>Task</th>
-                <th>Submitted</th>
+                <th>{{__('normal.student-page-tab-col1')}}</th>
+                <th>{{__('normal.student-page-tab-col2')}}</th>
             </tr>
             </thead>
             <tbody>

@@ -19,11 +19,35 @@ return [
     'home-page-desc7' => "Below you will find a video that documents the entire functionality of this application.",
     'home-page-title2' => "Video demo",
     'teacher-page' => "MathPac - teacher portal",
+    'student-page' => "MathPac - student portal",
     'teacher-page-title' => "Files settings",
+    'student-page-title' => "Generate tasks",
+    'student-page-title2' => "Assigned tasks",
+    'student-page-subtitle2' => "(to show click on the task)",
+    'student-page-tab-col1' => "Task",
+    'student-page-tab-col2' => "Submitted",
+    'teacher-page-tab2-col1' => "Name",
+    'teacher-page-tab2-col2' => "Surname",
+    'teacher-page-tab2-col3' => "Student ID",
+    'teacher-page-tab2-col4' => "Number of generated tasks",
+    'teacher-page-tab2-col5' => "Number of submitted tasks",
+    'teacher-page-tab2-col6' => "Total points",
+    'teacher-page-tab1-col1' => "Ready to use",
+    'teacher-page-tab1-col2' => "Name of file",
+    'teacher-page-tab1-col3' => "Start date",
+    'teacher-page-tab1-col4' => "End date",
+    'teacher-page-tab1-col5' => "Points per file",
+    'teacher-page-btn1' => "Submit",
+    'teacher-page-btn2' => "Export CSV",
+    'nav-btn1' => "Dashboard",
+    'nav-btn2' => "Log in",
+    'nav-btn3' => "Register",
     'teacher-page-desc-1' => "In the following form, you have the opportunity to define which latex files you will be 
                 able to use the student to generate examples for solving and in which period he will be able to 
                 generate them.",
     'teacher-page-desc-2' => "The following table contains an overview of students with information on how many 
                 tasks each student generated, how many they submitted and how many points they earned.",
-    'langSelect' => "Language selection"
+    'langSelect' => "Language selection",
+    'pdf' => "Download to PDF",
+    'password' => "Password"
 ];
