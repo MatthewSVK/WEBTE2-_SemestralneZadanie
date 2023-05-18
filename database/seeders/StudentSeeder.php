@@ -14,15 +14,15 @@ class StudentSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'id' => 111310,
-            'name' => "Peter",
-            'surname' => 'Kopecký',
-            'role' => "student",
-            'email'=> "pista@pista.sk",
-            'password' => "heslo",
-            'num_tasks' => 8,
-            'num_handed' => 7,
-            'points_total' => 25
+            'id' => 80804,
+            'name' => "Jozo",
+            'surname' => 'Dezo',
+            'role' => "Teacher",
+            'email'=> "zrbo@gmail.sk",
+            'password' => "necumvole",
+            'num_tasks' => null,
+            'num_handed' => null,
+            'points_total' => null
         ]);
     }
 }
