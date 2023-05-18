@@ -12,6 +12,7 @@
 
     <div id="task">
         <div class="container-fluid">
+            <!-- skusila som asi vsetky moznosti, neviem preco to nechce ist syntax nemam zlu (dufam) -->
             @if(isset($item->img) && $item->img != "")
                 <p><img src="{{ Storage::url($item->img) }}"></p>
             @endif
