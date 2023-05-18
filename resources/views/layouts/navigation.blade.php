@@ -15,7 +15,7 @@ style="background: rgba(33,37,41,1)">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                        {{ __('normal.home') }}
+                        {{ __('Home') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -50,7 +50,7 @@ style="background: rgba(33,37,41,1)">
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                {{ __('Home') }}
+                {{ __('normal.home') }}
             </x-responsive-nav-link>
         </div>
 

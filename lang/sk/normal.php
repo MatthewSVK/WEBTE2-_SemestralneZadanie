@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home' => "Domovska stranka",
     'hello' => "MathPac - úvodná stránka",
     'home-page-title' => "Úvodná stránka",
     'home-page-desc1' => "Táto stránka je aplikácia zameraná na výučbu študentov.",

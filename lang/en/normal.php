@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home' => "Home page",
     'hello' => "MathPac - home page",
     'home-page-title' => "Home Page",
     'home-page-desc1' => "This site is an application aimed at teaching students.",
