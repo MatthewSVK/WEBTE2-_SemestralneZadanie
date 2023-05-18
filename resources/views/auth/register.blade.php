@@ -28,8 +28,8 @@
             <x-input-label for="role" :value="__('Role')" />
 {{--            <x-text-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autocomplete="role" />--}}
             <x-dropdown id="role" class="block mt-1 w-full" name="role" required autocomplete="role">
-                <x-dropdown-option value="1" label="Student" />
-                <x-dropdown-option value="2" label="Teacher" />
+                <x-dropdown-option value="student" label="Student" />
+                <x-dropdown-option value="teacher" label="Teacher" />
             </x-dropdown>
             <x-input-error :messages="$errors->get('role')" class="mt-2" />
         </div>
