@@ -36,6 +36,8 @@ Route::get('/items/{id}', function($id){
     return (new ItemController)->show($id);
 });
 
+Route::get('image/{filename}', [ItemController::class, 'displayImage'])->name('image.displayImage');
+
 
 Route::get('/teacher', function (){
     return (new TeacherController)->showTeacherLayout();

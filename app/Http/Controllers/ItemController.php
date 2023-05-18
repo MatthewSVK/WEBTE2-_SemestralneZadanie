@@ -18,7 +18,7 @@ class ItemController extends Controller
     }
 
     public function displayImage($filename){
-    $path = storage_public('images/' . $filename);
+    $path = public_path($filename);
     if (!File::exists($path)) {
         abort(404);
     }
@@ -28,8 +28,6 @@ class ItemController extends Controller
 
     $response = Response::make($file, 200);
     $response->header("Content-Type", $type);
-
- 
 
     return $response;
 

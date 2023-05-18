@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <!-- skusila som asi vsetky moznosti, neviem preco to nechce ist syntax nemam zlu (dufam) -->
             @if(isset($item->image) && $item->image != "")
-                <p><img src="{{ asset('storage/'.$item->image) }}"></p>
+                <p><img src="{{ Storage::url($item->image) }}"></p>
             @endif
             <p class="my-paragraph">\[{{$item->task}}\]</p>
         </div>
