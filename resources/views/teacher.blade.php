@@ -69,12 +69,12 @@
                    id="tableStudents">
                 <thead class="text-center">
                 <tr>
-                    <th class="th-sm" id="studentName">Meno</th>
-                    <th class="th-sm" id="studentSurname">Priezvisko</th>
-                    <th class="th-sm" id="studentId">ID študenta</th>
-                    <th class="th-sm" id="numGenTasks">Počet gen. úloh</th>
-                    <th class="th-sm" id="numSubmitTasks">Počet odovz. úloh</th>
-                    <th class="th-sm" id="numPoints">Počet získ. bodov</th>
+                    <th class="th-sm" id="studentName">{{__('normal.teacher-page-tab2-col1')}}</th>
+                    <th class="th-sm" id="studentSurname">{{__('normal.teacher-page-tab2-col2')}}</th>
+                    <th class="th-sm" id="studentId">{{__('normal.teacher-page-tab2-col3')}}</th>
+                    <th class="th-sm" id="numGenTasks">{{__('normal.teacher-page-tab2-col4')}}</th>
+                    <th class="th-sm" id="numSubmitTasks">{{__('normal.teacher-page-tab2-col5')}}</th>
+                    <th class="th-sm" id="numPoints">{{__('normal.teacher-page-tab2-col6')}}</th>
                 </tr>
                 </thead>
                 <tbody class="table-group-divider">

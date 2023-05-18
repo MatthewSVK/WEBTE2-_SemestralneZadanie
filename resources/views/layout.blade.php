@@ -32,15 +32,15 @@
                 @if (Route::has('login'))
                     @auth
                         <button type="button" class="btn btn-outline-info"
-                                onclick="location.href='{{ url('/dashboard') }}';">Dashboard
+                                onclick="location.href='{{ url('/dashboard') }}';">{{__('normal.nav-btn1')}}
                         </button>
                     @else
                         <button type="button" class="btn btn-outline-success mr-2"
-                                onclick="location.href='{{ route('login') }}';">Log in
+                                onclick="location.href='{{ route('login') }}';">{{__('normal.nav-btn2')}}
                         </button>
                         @if (Route::has('register'))
                             <button type="button" class="btn btn-outline-warning "
-                                    onclick="location.href='{{ route('register') }}';">Register
+                                    onclick="location.href='{{ route('register') }}';">{{__('normal.nav-btn3')}}
                             </button>
                         @endif
                     @endauth

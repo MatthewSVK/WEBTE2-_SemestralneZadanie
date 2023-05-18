@@ -1,17 +1,5 @@
 @extends('layout')
 
-@section('menu')
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="#">Weather report<span class="sr-only"></span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="#">Site statistics<span class="sr-only"></span></a>
-    </li>
-@endsection
-
 @section('styles')
     <style>
 
@@ -55,7 +43,7 @@
     </div>
     <div>
         <button type="submit" name="instructionPDF" id="instructionPDF" class="btn mb-2 text-success"
-                style="background: rgba(16,16,16,0.7);">Download to PDF</button>
+                style="background: rgba(16,16,16,0.7);">{{__('normal.pdf')}}</button>
 
         {{--        <a class="btn mb-2 text-success" style="background: rgba(16,16,16,0.7);" href="{{ URL::to('/download-pdf') }}">Download to PDF</a>--}}
     </div>
