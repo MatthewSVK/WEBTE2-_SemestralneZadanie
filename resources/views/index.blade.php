@@ -54,7 +54,7 @@
 
     <div class="border-1 text-white border-dark py-4 mx-auto mb-3 card  text-center"
          style="padding: 0 2% 0 2%; max-width: 50%; background: rgba(16,16,16,0.7);">
-        *tu bude video*
+        <object height="350" data="http://www.youtube.com/v/JbhBdOfMEPs" type="application/x-shockwave-flash"><param name="src" value="http://www.youtube.com/v/JbhBdOfMEPs" /></object>
     </div>
 
 @endsection
