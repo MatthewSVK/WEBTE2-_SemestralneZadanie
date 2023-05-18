@@ -12,11 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('exercises', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->primary();
+            $table->unsignedBigInteger("task_id")->autoIncrement()->index(); // Add index to the 'task_id' column
+            $table->string('id');
             $table->string("task");
             $table->string("image");
             $table->string("solution");
+            $table->string("file_name")->nullable();
         });
+
     }
 
     /**

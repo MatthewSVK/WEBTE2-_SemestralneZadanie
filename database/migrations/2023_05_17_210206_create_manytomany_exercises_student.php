@@ -15,8 +15,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id')->primary();
             $table->unsignedBigInteger('generated_task_id');
             $table->foreign('generated_task_id')->references('id')->on('generated_tasks_by_student')->onDelete('cascade');
-            $table->unsignedBigInteger('exercise_id');
-            $table->foreign('exercise_id')->references('id')->on('exercises')->onDelete('cascade');
+            $table->unsignedBigInteger('exercise_task_id'); // Corrected column name
+            $table->foreign('exercise_task_id')->references('task_id')->on('exercises')->onDelete('cascade'); // Corrected foreign key reference
             $table->timestamps();
         });
     }

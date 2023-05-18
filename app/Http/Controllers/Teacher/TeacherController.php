@@ -12,7 +12,7 @@ class TeacherController extends Controller
         if($empty->isEmpty()) $fileCount= (new FileController())->loadFiles();
 
         $files= DB::table("latexFiles")->get();
-        $students= DB::table("users")->where("role", "student")->get();
+        $students= DB::table("users")->where("role", "student")->join("generated_tasks_by_student", "users.id", "=", "student_id")->get();
         return view("teacher",[
             "files"=> $files,
             "students"=> $students
