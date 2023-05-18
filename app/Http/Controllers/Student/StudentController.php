@@ -18,7 +18,8 @@ class StudentController extends Controller{
         $files= DB::table("latexFiles")->where("active", true)->get();
         $i=0;
         foreach ($files as $results => $result){
-            if (($result->from < now() && $result->to >now()) || ($result->from ==null || $result->to==null)){
+
+            if (($result->from > today() && $result->to <today()) || ($result->from ==null || $result->to==null)){
                     $results= (new LatexController)->parseLatex(Storage::disk('latex')->get($result->name));
                     DB::table("exercises")->insert($results);
                     DB::table("exercises")->where("id", $results[$i]["ID"])->update(["file_name" => $result->name]);
